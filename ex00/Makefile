@@ -8,6 +8,9 @@ all: $(NAME)
 $(NAME): $(SRC)
 	$(CC) $(CFLAGS) $^ -o $@
 
+%.o : %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
 clean:
 	$(RM) *.o
 
