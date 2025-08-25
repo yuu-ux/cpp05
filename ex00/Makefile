@@ -1,11 +1,12 @@
-NAME := Animal
+NAME := Bureaucrat
 CC := c++
-CFLAGS := -Wall -Wextra -Werror -std=c++98 -pedantic-errors
+CFLAGS := -Wall -Wextra -Werror -std=c++98 -pedantic
 SRC := main.cpp Bureaucrat.cpp
+OBJ := $(SRC:%.cpp=%.o)
 
 all: $(NAME)
 
-$(NAME): $(SRC)
+$(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $^ -o $@
 
 %.o : %.c

@@ -9,6 +9,7 @@ public:
   Bureaucrat(const Bureaucrat &bureaucrat);
   Bureaucrat &operator=(const Bureaucrat &bureaucrat);
   ~Bureaucrat();
+  Bureaucrat(const std::string& name, int grade);
   const std::string &getName() const;
   int getGrade() const;
   class GradeTooHighException : public std::exception {
@@ -20,10 +21,10 @@ public:
   Bureaucrat operator++();
   void IncrementGrade();
   void DecrementGrade();
-
-private:
   static const int kMaxGrade = 1;
   static const int kMinGrade = 150;
+
+private:
   const std::string name_;
   int grade_;
 };
