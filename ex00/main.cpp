@@ -2,29 +2,21 @@
 #include <iostream>
 
 int main(void) {
-  Bureaucrat a;
+  std::cout << "-------------------Grade is too low test-------------------\n";
+  Bureaucrat a = Bureaucrat("a", Bureaucrat::kMinGrade);
   try {
-    std::cout << a.getGrade() << std::endl;
+    std::cout << a << std::endl;
     a.DecrementGrade();
-    std::cout << a.getGrade() << std::endl;
+    std::cout << a << std::endl;
   } catch (const std::exception &e) {
     std::cerr << e.what() << std::endl;
   }
 
-  Bureaucrat b;
+  std::cout << "-------------------Grade is too high test-------------------\n";
+  Bureaucrat b = Bureaucrat("b", Bureaucrat::kMaxGrade);
   try {
-    std::cout << b.getGrade() << std::endl;
-    for (int i = 0; i < Bureaucrat::kMinGrade; i++) {
-      // std::cout << b.getGrade() << std::endl;
-      b.IncrementGrade();
-    }
-  } catch (const std::exception &e) {
-    std::cerr << e.what() << std::endl;
-  }
-
-  try {
-    Bureaucrat c = Bureaucrat("c", -1);
-    std::cout << c.getGrade() << std::endl;
+    std::cout << b << std::endl;
+    b.IncrementGrade();
   } catch (const std::exception &e) {
     std::cerr << e.what() << std::endl;
   }
