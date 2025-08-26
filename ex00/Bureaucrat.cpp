@@ -2,11 +2,12 @@
 
 Bureaucrat::Bureaucrat() : name_(""), grade_(Bureaucrat::kMinGrade) {}
 
-Bureaucrat::Bureaucrat(const std::string& name, int grade) : name_(name), grade_(grade) {
-	if (grade_ > kMinGrade)
-		throw GradeTooLowException();
-	else if (grade_ < kMaxGrade)
-		throw GradeTooHighException();
+Bureaucrat::Bureaucrat(const std::string &name, int grade)
+    : name_(name), grade_(grade) {
+  if (grade_ > kMinGrade)
+    throw GradeTooLowException();
+  else if (grade_ < kMaxGrade)
+    throw GradeTooHighException();
 }
 Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat)
     : name_(bureaucrat.getName()), grade_(bureaucrat.getGrade()) {}

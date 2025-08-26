@@ -9,7 +9,7 @@ public:
   Bureaucrat(const Bureaucrat &bureaucrat);
   Bureaucrat &operator=(const Bureaucrat &bureaucrat);
   ~Bureaucrat();
-  Bureaucrat(const std::string& name, int grade);
+  Bureaucrat(const std::string &name, int grade);
   const std::string &getName() const;
   int getGrade() const;
   class GradeTooHighException : public std::exception {
