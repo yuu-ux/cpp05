@@ -7,24 +7,32 @@ class Bureaucrat;
 
 class AForm {
 public:
+	// constructor, destructor
   AForm();
   AForm(const AForm &AForm);
   AForm &operator=(const AForm &AForm);
   ~AForm();
   AForm(const std::string &name, const int gradeRequiredSign,
        const int gradeRequireExecute);
+
+  // getter
   const std::string &getName() const;
   bool getSigned() const;
-  const int getGradeRequiredSign() const;
-  const int getGradeRequiredExecute() const;
-  void beSigned(const Bureaucrat &bureaucrat);
+  int getGradeRequiredSign() const;
+  int getGradeRequiredExecute() const;
+
+  // exception class
   class GradeTooHighException : public std::exception {
     virtual const char *what() const throw();
   };
   class GradeTooLowException : public std::exception {
     virtual const char *what() const throw();
   };
-  virtual void execute(Bureaucrat const& executor) const = 0;
+
+  // func
+  void beSigned(const Bureaucrat &bureaucrat);
+  void execute(Bureaucrat const& executor) const;
+  virtual void doExecute(Bureaucrat const& executor) const = 0;
 
 private:
   const std::string name_;

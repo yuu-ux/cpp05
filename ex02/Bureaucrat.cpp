@@ -1,5 +1,5 @@
 #include "Bureaucrat.h"
-#include "Form.h"
+#include "AForm.h"
 
 Bureaucrat::Bureaucrat() : name_(""), grade_(Bureaucrat::kMinGrade) {}
 
@@ -54,7 +54,7 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
   return os;
 }
 
-void Bureaucrat::signForm(Form &form) const {
+void Bureaucrat::signForm(AForm &form) const {
   try {
     form.beSigned(*this);
     std::cout << this->getName() << " signed " << form.getName() << std::endl;

@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-class Form;
+class AForm;
 
 class Bureaucrat {
 public:
@@ -25,7 +25,8 @@ public:
   void DecrementGrade();
   static const int kMaxGrade = 1;
   static const int kMinGrade = 150;
-  void signForm(Form &form) const;
+  void signForm(AForm &form) const;
+  void executeForm(const AForm &form) const;
 
 private:
   const std::string name_;

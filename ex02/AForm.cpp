@@ -52,9 +52,9 @@ const std::string &AForm::getName() const { return name_; }
 
 bool AForm::getSigned() const { return isSigned_; }
 
-const int AForm::getGradeRequiredSign() const { return gradeRequiredSign_; }
+int AForm::getGradeRequiredSign() const { return gradeRequiredSign_; }
 
-const int AForm::getGradeRequiredExecute() const {
+int AForm::getGradeRequiredExecute() const {
   return gradeRequiredExecute_;
 }
 
