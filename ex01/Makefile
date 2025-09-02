@@ -1,16 +1,16 @@
 NAME := Form
-CC := c++
-CFLAGS := -Wall -Wextra -Werror -std=c++98 -pedantic
+CXX := c++
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98 -pedantic
 SRC := main.cpp Bureaucrat.cpp Form.cpp
 OBJ := $(SRC:%.cpp=%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 clean:
 	$(RM) *.o
