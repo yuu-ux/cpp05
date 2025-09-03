@@ -3,6 +3,7 @@
 
 #include "AForm.h"
 #include "Bureaucrat.h"
+#include <fstream>
 
 class ShrubberyCreationForm : public AForm {
 	public:
@@ -10,10 +11,12 @@ class ShrubberyCreationForm : public AForm {
 		ShrubberyCreationForm(const ShrubberyCreationForm& shrubberycreation);
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm& shrubberycreation);
 		~ShrubberyCreationForm();
+		const std::string &getTarget() const;
 		void doExecute(Bureaucrat const& executor) const;
 	private:
 		static const int kDefaultGreadSign = 145;
 		static const int kDefaultGreadExec = 137;
+		const std::string target_;
 };
 
 #endif

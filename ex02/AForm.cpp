@@ -2,7 +2,7 @@
 #include "Bureaucrat.h"
 
 AForm::AForm()
-    : name_(""), isSigned_(false), gradeRequiredSign_(kDefaultGrade),
+    : name_("default"), isSigned_(false), gradeRequiredSign_(kDefaultGrade),
       gradeRequiredExecute_(kDefaultGrade) {}
 
 AForm::AForm(const AForm &form)
@@ -64,4 +64,10 @@ std::ostream &operator<<(std::ostream &os, const AForm &form) {
      << "gradeRequiresSign: " << form.getGradeRequiredSign() << std::endl
      << "gradeRequiredExecute: " << form.getGradeRequiredExecute() << std::endl;
   return os;
+}
+
+void AForm::execute(Bureaucrat const& executor) const {
+	if (!getSigned())
+		throw ;
+	doExecute(executor);
 }
