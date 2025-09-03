@@ -12,11 +12,13 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 void ShrubberyCreationForm::doExecute(Bureaucrat const& executor) const {
+    if (executor.getGrade() > this->getGradeRequiredExecute())
+        throw GradeTooLowException();
+
 	const std::string fileName = target_ + "_shrubbery";
 	std::ofstream file(fileName.c_str());
 	if (!file.is_open())
 		throw std::runtime_error("can't open file");
-
 	std::string shrubbery =
 	"       _-_\n"
 	"    /~~   ~~\\\n"
