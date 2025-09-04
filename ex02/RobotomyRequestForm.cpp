@@ -23,6 +23,8 @@ const std::string &RobotomyRequestForm::getTarget() const { return target_; }
 
 void RobotomyRequestForm::doExecute() const {
   std::cout << "~~drilling noises~~" << std::endl;
+  // もし、短時間に連続でこの関数が呼び出された場合、シード値が同じ値で設定されるおそれがある。
+  // シード値を同じ値で設定したすると、乱数に偏りができてしまうため、シード値は呼び出し後1度だけ設定する
   static bool seeded = false;
   if (!seeded) {
     std::srand(std::time(NULL));
