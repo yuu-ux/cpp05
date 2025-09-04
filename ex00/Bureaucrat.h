@@ -18,7 +18,6 @@ public:
   class GradeTooLowException : public std::exception {
     virtual const char *what() const throw();
   };
-  Bureaucrat operator++();
   void IncrementGrade();
   void DecrementGrade();
   static const int kMaxGrade = 1;
