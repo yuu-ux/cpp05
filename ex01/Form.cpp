@@ -60,6 +60,6 @@ std::ostream &operator<<(std::ostream &os, const Form &form) {
   os << "name: " << form.getName() << std::endl
      << "signed: " << form.getSigned() << std::endl
      << "gradeRequiresSign: " << form.getGradeRequiredSign() << std::endl
-     << "gradeRequiredExecute: " << form.getGradeRequiredExecute() << std::endl;
+     << "gradeRequiredExecute: " << form.getGradeRequiredExecute();
   return os;
 }

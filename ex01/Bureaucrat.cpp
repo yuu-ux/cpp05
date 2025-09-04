@@ -50,7 +50,7 @@ void Bureaucrat::DecrementGrade() {
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
   os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade()
-     << "." << std::endl;
+     << ".";
   return os;
 }
 
