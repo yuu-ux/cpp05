@@ -54,9 +54,7 @@ bool Form::getSigned() const { return isSigned_; }
 
 int Form::getGradeRequiredSign() const { return gradeRequiredSign_; }
 
-int Form::getGradeRequiredExecute() const {
-  return gradeRequiredExecute_;
-}
+int Form::getGradeRequiredExecute() const { return gradeRequiredExecute_; }
 
 std::ostream &operator<<(std::ostream &os, const Form &form) {
   os << "name: " << form.getName() << std::endl

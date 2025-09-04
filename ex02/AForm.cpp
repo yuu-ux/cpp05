@@ -11,7 +11,7 @@ AForm::AForm(const AForm &form)
       gradeRequiredExecute_(form.getGradeRequiredExecute()) {}
 
 AForm::AForm(const std::string &name, const int gradeRequiredSign,
-           const int gradeRequiredExecute)
+             const int gradeRequiredExecute)
     : name_(name), isSigned_(false), gradeRequiredSign_(gradeRequiredSign),
       gradeRequiredExecute_(gradeRequiredExecute) {
   if (gradeRequiredExecute_ < Bureaucrat::kMaxGrade ||
@@ -41,7 +41,7 @@ const char *AForm::GradeTooLowException::what() const throw() {
 }
 
 const char *AForm::FormNotSignedException::what() const throw() {
-    return "Form Not Signed";
+  return "Form Not Signed";
 }
 
 void AForm::beSigned(const Bureaucrat &bureaucrat) {
@@ -58,9 +58,7 @@ bool AForm::getSigned() const { return isSigned_; }
 
 int AForm::getGradeRequiredSign() const { return gradeRequiredSign_; }
 
-int AForm::getGradeRequiredExecute() const {
-  return gradeRequiredExecute_;
-}
+int AForm::getGradeRequiredExecute() const { return gradeRequiredExecute_; }
 
 std::ostream &operator<<(std::ostream &os, const AForm &form) {
   os << "name: " << form.getName() << std::endl
@@ -70,11 +68,11 @@ std::ostream &operator<<(std::ostream &os, const AForm &form) {
   return os;
 }
 
-void AForm::execute(Bureaucrat const& executor) const {
-	if (!getSigned())
-		throw FormNotSignedException();
-    if (executor.getGrade() > gradeRequiredExecute_) {
-		throw GradeTooLowException();
-	}
-	doExecute();
+void AForm::execute(Bureaucrat const &executor) const {
+  if (!getSigned())
+    throw FormNotSignedException();
+  if (executor.getGrade() > gradeRequiredExecute_) {
+    throw GradeTooLowException();
+  }
+  doExecute();
 }

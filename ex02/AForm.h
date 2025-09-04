@@ -7,13 +7,13 @@ class Bureaucrat;
 
 class AForm {
 public:
-	// constructor, destructor
+  // constructor, destructor
   AForm();
   AForm(const AForm &AForm);
   AForm &operator=(const AForm &AForm);
   virtual ~AForm();
   AForm(const std::string &name, const int gradeRequiredSign,
-       const int gradeRequireExecute);
+        const int gradeRequireExecute);
 
   // getter
   const std::string &getName() const;
@@ -29,13 +29,13 @@ public:
     virtual const char *what() const throw();
   };
   class FormNotSignedException : public std::exception {
-      public:
-          virtual const char *what() const throw();
+  public:
+    virtual const char *what() const throw();
   };
 
   // func
   void beSigned(const Bureaucrat &bureaucrat);
-  void execute(Bureaucrat const& executor) const;
+  void execute(Bureaucrat const &executor) const;
   virtual void doExecute() const = 0;
 
 private:
