@@ -62,7 +62,7 @@ int AForm::getGradeRequiredExecute() const { return gradeRequiredExecute_; }
 
 std::ostream &operator<<(std::ostream &os, const AForm &form) {
   os << "name: " << form.getName() << std::endl
-     << "signed: " << form.getSigned() << std::endl
+     << "signed: " << std::boolalpha << form.getSigned() << std::endl
      << "gradeRequiresSign: " << form.getGradeRequiredSign() << std::endl
      << "gradeRequiredExecute: " << form.getGradeRequiredExecute();
   return os;
