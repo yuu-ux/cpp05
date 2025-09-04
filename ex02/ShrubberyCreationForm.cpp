@@ -11,12 +11,12 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
       target_(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(
-    const ShrubberyCreationForm &shrubberycreation)
-    : AForm(shrubberycreation), target_(shrubberycreation.target_) {}
+    const ShrubberyCreationForm &form)
+    : AForm(form) {}
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(
-    const ShrubberyCreationForm &shrubberycreation) {
-  AForm::operator=(shrubberycreation);
+    const ShrubberyCreationForm &form) {
+  AForm::operator=(form);
   return *this;
 }
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
