@@ -12,8 +12,9 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 void ShrubberyCreationForm::doExecute(Bureaucrat const& executor) const {
-    if (executor.getGrade() > this->getGradeRequiredExecute())
-        throw GradeTooLowException();
+    if (executor.getGrade() > this->getGradeRequiredExecute()) {
+		throw GradeTooLowException();
+	}
 
 	const std::string fileName = target_ + "_shrubbery";
 	std::ofstream file(fileName.c_str());
