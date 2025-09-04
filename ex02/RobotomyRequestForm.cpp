@@ -6,10 +6,14 @@ RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", kDefau
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& form) : AForm(form) {}
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm& form) {
-	AForm::operator=(form);
-	return *this;
+        AForm::operator=(form);
+        return *this;
 }
 RobotomyRequestForm::~RobotomyRequestForm() {}
+
+const std::string &RobotomyRequestForm::getTarget() const {
+        return target_;
+}
 
 void RobotomyRequestForm::doExecute() const {
 	std::cout << "~~drilling noises~~" << std::endl;
