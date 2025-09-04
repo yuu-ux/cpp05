@@ -9,6 +9,7 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade)
   else if (grade_ < kMaxGrade)
     throw GradeTooHighException();
 }
+
 Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat)
     : name_(bureaucrat.getName()), grade_(bureaucrat.getGrade()) {}
 
