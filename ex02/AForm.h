@@ -36,7 +36,7 @@ public:
   // func
   void beSigned(const Bureaucrat &bureaucrat);
   void execute(Bureaucrat const& executor) const;
-  virtual void doExecute(Bureaucrat const& executor) const = 0;
+  virtual void doExecute() const = 0;
 
 private:
   const std::string name_;

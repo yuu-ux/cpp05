@@ -12,7 +12,7 @@ class RobotomyRequestForm : public AForm {
 		RobotomyRequestForm &operator=(const RobotomyRequestForm& form);
 		~RobotomyRequestForm();
 		const std::string &getTarget() const;
-		void doExecute(Bureaucrat const& executor) const;
+		void doExecute() const;
 	private:
 		static const int kDefaultGreadSign = 72;
 		static const int kDefaultGreadExec = 45;

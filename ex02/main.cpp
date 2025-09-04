@@ -2,6 +2,7 @@
 #include "AForm.h"
 #include "ShrubberyCreationForm.h"
 #include "RobotomyRequestForm.h"
+#include "PresidentialPardonForm.h"
 
 void printSeparator(std::string message) {
 	std::cout << "---------------------" << message << "---------------------" << std::endl;
@@ -70,5 +71,36 @@ int main(void) {
 			std::cerr << e.what() << std::endl;
 		}
 	}
-  // test PresidentialPardonForm
+	printSeparator("test PresidentialPardonForm");
+	{
+		PresidentialPardonForm a;
+		Bureaucrat b = Bureaucrat("b", 1);
+		try {
+			b.signForm(a);
+			a.execute(b);
+		} catch(const std::exception & e) {
+			std::cerr << e.what() << std::endl;
+		}
+	}
+	{
+		printSeparator("exception form not signed");
+		PresidentialPardonForm a;
+		Bureaucrat b = Bureaucrat("b", 1);
+		try {
+			a.execute(b);
+		} catch(const std::exception & e) {
+			std::cerr << e.what() << std::endl;
+		}
+	}
+	{
+		printSeparator("exception grade is too low");
+		PresidentialPardonForm a;
+		Bureaucrat b = Bureaucrat("b", 6);
+		try {
+			b.signForm(a);
+			a.execute(b);
+		} catch(const std::exception & e) {
+			std::cerr << e.what() << std::endl;
+		}
+	}
 }

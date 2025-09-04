@@ -11,10 +11,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm& f
 }
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
-void RobotomyRequestForm::doExecute(Bureaucrat const& executor) const {
-    if (executor.getGrade() > this->getGradeRequiredExecute()) {
-		throw GradeTooLowException();
-	}
+void RobotomyRequestForm::doExecute() const {
 	std::cout << "~~drilling noises~~" << std::endl;
 	std::srand(std::time(NULL));
 	if (std::rand()%2) {
