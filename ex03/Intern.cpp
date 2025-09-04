@@ -25,13 +25,13 @@ AForm *Intern::makeForm(const std::string &name, const std::string &target) {
       "presidential pardon",
   };
 
-  for (int i = 0; i < 3; ++i) {
+  for (int i = 0; i < kFormNum; ++i) {
     if (name == formNames[i]) {
       std::cout << "Intern creates " << name << std::endl;
       return (this->*makeFormFunctions[i])(target);
     }
   }
-  std::cout << "Intern can't create" << name << std::endl;
+  std::cout << "Intern can't create " << name << std::endl;
   return NULL;
 }
 
