@@ -14,6 +14,7 @@ int main(void) {
     rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
     std::cout << *rrf << std::endl;
   }
+  std::cout << '\n';
   {
     printSeparator("test robotomy");
     Intern someRandomIntern;
@@ -21,6 +22,7 @@ int main(void) {
     rrf = someRandomIntern.makeForm("robotomy request", "Bender");
     std::cout << *rrf << std::endl;
   }
+  std::cout << '\n';
   {
     printSeparator("test presidential");
     Intern someRandomIntern;
@@ -28,6 +30,7 @@ int main(void) {
     rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
     std::cout << *rrf << std::endl;
   }
+  std::cout << '\n';
   {
     printSeparator("test invalid name");
     Intern someRandomIntern;
