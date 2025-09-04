@@ -9,23 +9,24 @@ void printSeparator(std::string message) {
 }
 
 int main(void) {
-  // test ShrubberyCreationForm
     printSeparator("test ShrubberyCreationForm");
     {
         ShrubberyCreationForm a;
         Bureaucrat b = Bureaucrat("b", 1);
         b.signForm(a);
-        a.execute(b);
+		b.executeForm(a);
+		std::cout << '\n';
     }
     {
         printSeparator("exception form not signed");
         ShrubberyCreationForm a;
         Bureaucrat b = Bureaucrat("b", 1);
         try {
-            a.execute(b);
+			b.executeForm(a);
         } catch (const std::exception& e) {
             std::cerr << e.what() << std::endl;
         }
+		std::cout << '\n';
     }
     {
         printSeparator("exception grade is too low");
@@ -33,32 +34,35 @@ int main(void) {
         Bureaucrat b = Bureaucrat("b", 138);
         try {
             b.signForm(a);
-            a.execute(b);
+			b.executeForm(a);
         } catch (const std::exception& e) {
             std::cerr << e.what() << std::endl;
         }
     }
-  // test RobotomyRequestForm
+
+	std::cout << "\n\n";
 	printSeparator("test RobotomyRequestForm");
 	{
 		RobotomyRequestForm a;
 		Bureaucrat b = Bureaucrat("b", 1);
 		try {
 			b.signForm(a);
-			a.execute(b);
+			b.executeForm(a);
 		} catch(const std::exception & e) {
 			std::cerr << e.what() << std::endl;
 		}
+		std::cout << '\n';
 	}
 	{
 		printSeparator("exception form not signed");
 		RobotomyRequestForm a;
 		Bureaucrat b = Bureaucrat("b", 1);
 		try {
-			a.execute(b);
+			b.executeForm(a);
 		} catch(const std::exception & e) {
 			std::cerr << e.what() << std::endl;
 		}
+		std::cout << '\n';
 	}
 	{
 		printSeparator("exception grade is too low");
@@ -66,31 +70,35 @@ int main(void) {
 		Bureaucrat b = Bureaucrat("b", 46);
 		try {
 			b.signForm(a);
-			a.execute(b);
+			b.executeForm(a);
 		} catch(const std::exception & e) {
 			std::cerr << e.what() << std::endl;
 		}
 	}
+
+	std::cout << "\n\n";
 	printSeparator("test PresidentialPardonForm");
 	{
 		PresidentialPardonForm a;
 		Bureaucrat b = Bureaucrat("b", 1);
 		try {
 			b.signForm(a);
-			a.execute(b);
+			b.executeForm(a);
 		} catch(const std::exception & e) {
 			std::cerr << e.what() << std::endl;
 		}
+		std::cout << '\n';
 	}
 	{
 		printSeparator("exception form not signed");
 		PresidentialPardonForm a;
 		Bureaucrat b = Bureaucrat("b", 1);
 		try {
-			a.execute(b);
+			b.executeForm(a);
 		} catch(const std::exception & e) {
 			std::cerr << e.what() << std::endl;
 		}
+		std::cout << '\n';
 	}
 	{
 		printSeparator("exception grade is too low");
@@ -98,7 +106,7 @@ int main(void) {
 		Bureaucrat b = Bureaucrat("b", 6);
 		try {
 			b.signForm(a);
-			a.execute(b);
+			b.executeForm(a);
 		} catch(const std::exception & e) {
 			std::cerr << e.what() << std::endl;
 		}
