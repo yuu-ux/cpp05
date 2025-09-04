@@ -6,6 +6,7 @@
 class PresidentialPardonForm : public AForm {
 public:
   PresidentialPardonForm();
+  explicit PresidentialPardonForm(const std::string &target);
   PresidentialPardonForm(const PresidentialPardonForm &form);
   PresidentialPardonForm &operator=(const PresidentialPardonForm &form);
   ~PresidentialPardonForm();
@@ -13,8 +14,8 @@ public:
   void doExecute() const;
 
 private:
-  static const int kDefaultGreadSign = 25;
-  static const int kDefaultGreadExec = 5;
+  static const int kDefaultGradeSign = 25;
+  static const int kDefaultGradeExec = 5;
   const std::string target_;
 };
 #endif

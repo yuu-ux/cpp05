@@ -2,12 +2,16 @@
 #include "Bureaucrat.h"
 
 PresidentialPardonForm::PresidentialPardonForm()
-    : AForm("PresidentialPardonForm", kDefaultGreadSign, kDefaultGreadExec),
+    : AForm("PresidentialPardonForm", kDefaultGradeSign, kDefaultGradeExec),
       target_("default") {}
+
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
+    : AForm("PresidentialPardonForm", kDefaultGradeSign, kDefaultGradeExec),
+      target_(target) {}
 
 PresidentialPardonForm::PresidentialPardonForm(
     const PresidentialPardonForm &form)
-    : AForm(form) {}
+    : AForm(form), target_(form.target_) {}
 
 PresidentialPardonForm &
 PresidentialPardonForm::operator=(const PresidentialPardonForm &form) {

@@ -1,13 +1,18 @@
 #include "ShrubberyCreationForm.h"
 #include "AForm.h"
+#include <stdexcept>
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-    : AForm("ShrubberyCreationForm", kDefaultGreadSign, kDefaultGreadExec),
+    : AForm("ShrubberyCreationForm", kDefaultGradeSign, kDefaultGradeExec),
       target_("default") {}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
+    : AForm("ShrubberyCreationForm", kDefaultGradeSign, kDefaultGradeExec),
+      target_(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(
     const ShrubberyCreationForm &shrubberycreation)
-    : AForm(shrubberycreation) {}
+    : AForm(shrubberycreation), target_(shrubberycreation.target_) {}
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(
     const ShrubberyCreationForm &shrubberycreation) {
