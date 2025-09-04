@@ -8,16 +8,17 @@
 class ShrubberyCreationForm : public AForm {
 public:
   ShrubberyCreationForm();
-  ShrubberyCreationForm(const ShrubberyCreationForm &shrubberycreation);
+  explicit ShrubberyCreationForm(const std::string &target);
+  ShrubberyCreationForm(const ShrubberyCreationForm &form);
   ShrubberyCreationForm &
-  operator=(const ShrubberyCreationForm &shrubberycreation);
+  operator=(const ShrubberyCreationForm &form);
   ~ShrubberyCreationForm();
   const std::string &getTarget() const;
   void doExecute() const;
 
 private:
-  static const int kDefaultGreadSign = 145;
-  static const int kDefaultGreadExec = 137;
+  static const int kDefaultGradeSign = 145;
+  static const int kDefaultGradeExec = 137;
   const std::string target_;
 };
 

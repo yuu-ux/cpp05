@@ -2,11 +2,15 @@
 #include "Bureaucrat.h"
 
 RobotomyRequestForm::RobotomyRequestForm()
-    : AForm("RobotomyRequestForm", kDefaultGreadSign, kDefaultGreadExec),
+    : AForm("RobotomyRequestForm", kDefaultGradeSign, kDefaultGradeExec),
       target_("default") {}
 
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
+    : AForm("RobotomyRequestForm", kDefaultGradeSign, kDefaultGradeExec),
+      target_(target) {}
+
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &form)
-    : AForm(form) {}
+    : AForm(form), target_(form.target_) {}
 
 RobotomyRequestForm &
 RobotomyRequestForm::operator=(const RobotomyRequestForm &form) {
@@ -19,7 +23,13 @@ const std::string &RobotomyRequestForm::getTarget() const { return target_; }
 
 void RobotomyRequestForm::doExecute() const {
   std::cout << "~~drilling noises~~" << std::endl;
-  std::srand(std::time(NULL));
+  // もし、短時間に連続でこの関数が呼び出された場合、シード値が同じ値で設定されるおそれがある。
+  // シード値を同じ値で設定したすると、乱数に偏りができてしまうため、シード値は呼び出し後1度だけ設定する
+  static bool seeded = false;
+  if (!seeded) {
+    std::srand(std::time(NULL));
+    seeded = true;
+  }
   if (std::rand() % 2) {
     std::cout << target_ << " has been robotomized successfully!" << std::endl;
   } else {
