@@ -1,5 +1,4 @@
 #include "RobotomyRequestForm.h"
-#include "Bureaucrat.h"
 
 RobotomyRequestForm::RobotomyRequestForm()
     : AForm("RobotomyRequestForm", kDefaultGradeSign, kDefaultGradeExec),
