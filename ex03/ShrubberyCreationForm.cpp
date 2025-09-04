@@ -10,12 +10,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
     : AForm("ShrubberyCreationForm", kDefaultGradeSign, kDefaultGradeExec),
       target_(target) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(
-    const ShrubberyCreationForm &form)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &form)
     : AForm(form) {}
 
-ShrubberyCreationForm &ShrubberyCreationForm::operator=(
-    const ShrubberyCreationForm &form) {
+ShrubberyCreationForm &
+ShrubberyCreationForm::operator=(const ShrubberyCreationForm &form) {
   AForm::operator=(form);
   return *this;
 }
