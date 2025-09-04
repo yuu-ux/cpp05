@@ -15,8 +15,8 @@ public:
        const int gradeRequireExecute);
   const std::string &getName() const;
   bool getSigned() const;
-  const int getGradeRequiredSign() const;
-  const int getGradeRequiredExecute() const;
+  int getGradeRequiredSign() const;
+  int getGradeRequiredExecute() const;
   void beSigned(const Bureaucrat &bureaucrat);
   class GradeTooHighException : public std::exception {
     virtual const char *what() const throw();
